@@ -1,10 +1,11 @@
 import axios from 'axios';
-
-const API_KEY = 'AIzaSyBA3yFmBkf_haqhFPnVZ10IBX6XjUrFXTM';
+import dotenv from 'dotenv';
+//import {dotenv} from 'dotenv'
 
 async function createUser(email, password) {
   const response = await axios.post(
-    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + API_KEY,
+    'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+      process.env.API_KEY,
     {
       email: email,
       password: password,
