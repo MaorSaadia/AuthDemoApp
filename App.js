@@ -18,8 +18,24 @@ function AuthStack() {
         contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen
+        options={{
+          presentation: 'modal',
+          animation: 'slide_from_left',
+          headerTitleAlign: 'center',
+        }}
+        name="Login"
+        component={LoginScreen}
+      />
+      <Stack.Screen
+        options={{
+          presentation: 'modal',
+          animation: 'slide_from_right',
+          headerTitleAlign: 'center',
+        }}
+        name="Sign Up"
+        component={SignupScreen}
+      />
     </Stack.Navigator>
   );
 }
